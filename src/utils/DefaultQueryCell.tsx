@@ -39,7 +39,7 @@ interface QueryCellOptionsNoEmpty<TData, TError>
   success: (query: QueryObserverSuccessResult<TData, TError>) => JSXElementOrNull
 }
 
-export function createQueryCell<TError>(
+function createQueryCell<TError>(
   queryCellOpts: CreateQueryCellOptions<TError>,
 ) {
   function QueryCell<TData>(opts: QueryCellOptionsWithEmpty<TData, TError>): JSXElementOrNull
