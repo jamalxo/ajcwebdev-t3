@@ -13,6 +13,12 @@ pnpm i
 pnpm dev
 ```
 
+Deploy to Vercel.
+
+```bash
+pnpm vercel --env DATABASE_URL=YOUR_DATABASE_URL_HERE
+```
+
 ### Docker
 
 In your [next.config.mjs](./next.config.mjs), add the `output: "standalone"` option to your config.
