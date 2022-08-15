@@ -3,6 +3,10 @@ import { styles } from "../styles/styles"
 import Link from "next/link"
 import { trpc } from "../utils/trpc"
 
+const {
+  blogHeader, blogLink
+} = styles
+
 type BlogPostProps = {
   id: string
   title: string
@@ -15,7 +19,7 @@ export default function PostsCell() {
 
   return (
     <>
-      <h2 className={styles.blogHeader}>
+      <h2 className={blogHeader}>
         Posts
       </h2>
 
@@ -26,7 +30,9 @@ export default function PostsCell() {
         success={({ data }: any) => (
           data.map(({id, title}: BlogPostProps) => (
             <Link key={id} href={`/post/${id}`}>
-              <p className={styles.link}>{title}</p>
+              <p className={blogLink}>
+                {title}
+              </p>
             </Link>
           ))
         )}

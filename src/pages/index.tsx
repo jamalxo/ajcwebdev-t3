@@ -3,6 +3,10 @@ import { styles } from "../styles/styles"
 import Card from "../components/Card"
 import PostsCell from "../components/PostsCell"
 
+const {
+  appContainer, title, purple, grid
+} = styles
+
 export default function Home() {
   return (
     <>
@@ -12,12 +16,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.appContainer}>
-        <h1 className={styles.title}>
-          Hello from <span className="text-purple-300">ajc</span>webdev
+      <main className={appContainer}>
+        <h1 className={title}>
+          Hello from <span className={purple}>ajc</span>webdev
         </h1>
 
-        <div className={styles.grid}>
+        <div className={grid}>
           <Card name="Blog" url="ajcwebdev.com/" />
           <Card name="Twitter" url="twitter.com/ajcwebdev/" />
           <Card name="GitHub" url="github.com/ajcwebdev/" />

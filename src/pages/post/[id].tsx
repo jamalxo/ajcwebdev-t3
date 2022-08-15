@@ -4,6 +4,10 @@ import { DefaultQueryCell } from "../../utils/DefaultQueryCell"
 import { trpc } from "../../utils/trpc"
 import { styles } from "../../styles/styles"
 
+const {
+  blogContainer, blogTitle, blogBody
+} = styles
+
 export default function PostPage() {
   const id = useRouter().query.id as string
   const postQuery = trpc.useQuery([
@@ -20,9 +24,9 @@ export default function PostPage() {
             <meta name="description" content={data.description} />
           </Head>
 
-          <main className={styles.blogContainer}>
-            <h1 className={styles.blogTitle}>{data.title}</h1>
-            <p className={styles.blogBody}>{data.body}</p>
+          <main className={blogContainer}>
+            <h1 className={blogTitle}>{data.title}</h1>
+            <p className={blogBody}>{data.body}</p>
             <em>Created {data.createdAt.toLocaleDateString()}</em>
           </main>
         </>
